@@ -8,27 +8,19 @@
 <style>
   body {
     font-family: 'Poppins', sans-serif;
-    background: transparent;
+    background: #f0f0f0; /* Fundo total */
     display: flex;
     justify-content: center;
-    padding: 20px;
-  }
-
-  .timer-wrapper {
-    background: #f0f0f0; /* fundo único quadrado */
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
+    padding: 20px;
   }
 
   .timer-header {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    max-width: 400px;
     font-size: 14px;
     font-weight: 400;
     text-align: center;
@@ -36,13 +28,13 @@
 
   .timer-header div {
     flex: 1;
-    padding: 12px 0; /* altura das opções */
+    padding: 12px 0;
     cursor: pointer;
     transition: background 0.3s;
   }
 
   .timer-header .active {
-    background: #ddd; /* destaque do modo ativo */
+    background: #ddd; /* destaque no modo ativo */
     font-weight: 600;
   }
 
@@ -50,13 +42,14 @@
     font-size: 36px;
     font-weight: 600;
     color: #333;
-    margin: 20px 0; /* espaço maior entre header e display */
+    margin: 20px 0;
   }
 
   .timer-buttons {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    max-width: 400px;
     gap: 12px;
   }
 
@@ -78,18 +71,19 @@
 </style>
 </head>
 <body>
-<div class="timer-wrapper">
-  <div class="timer-header">
-    <div id="short-break">Intervalo Curto</div>
-    <div id="focus" class="active">Foco</div>
-    <div id="long-break">Intervalo Longo</div>
-  </div>
-  <div class="timer-display" id="time-display">25:00</div>
-  <div class="timer-buttons">
-    <button id="start">Começar</button>
-    <button id="pause">Pausar</button>
-    <button id="reset">Resetar</button>
-  </div>
+
+<div class="timer-header">
+  <div id="short-break">Intervalo Curto</div>
+  <div id="focus" class="active">Foco</div>
+  <div id="long-break">Intervalo Longo</div>
+</div>
+
+<div class="timer-display" id="time-display">25:00</div>
+
+<div class="timer-buttons">
+  <button id="start">Começar</button>
+  <button id="pause">Pausar</button>
+  <button id="reset">Resetar</button>
 </div>
 
 <script>
