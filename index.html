@@ -15,15 +15,13 @@
   }
 
   .timer-wrapper {
-    background: #f0f0f0; /* fundo completo */
-    border-radius: 16px;
-    padding: 24px;
+    background: #f0f0f0; /* fundo único quadrado */
     width: 100%;
     max-width: 400px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* mais espaço entre display e botões */
     box-sizing: border-box;
   }
 
@@ -38,15 +36,13 @@
 
   .timer-header div {
     flex: 1;
-    padding: 12px 0; /* maior comprimento/altura */
-    border-radius: 8px;
-    background: #f0f0f0; /* mesma cor do fundo */
+    padding: 12px 0; /* altura das opções */
     cursor: pointer;
     transition: background 0.3s;
   }
 
   .timer-header .active {
-    background: #ddd;
+    background: #ddd; /* destaque do modo ativo */
     font-weight: 600;
   }
 
@@ -54,20 +50,20 @@
     font-size: 36px;
     font-weight: 600;
     color: #333;
-    margin-top: 10px;
+    margin: 20px 0; /* espaço maior entre header e display */
   }
 
   .timer-buttons {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    gap: 12px; /* mais espaço entre os botões */
+    gap: 12px;
   }
 
   .timer-buttons button {
     flex: 1;
     padding: 10px 0;
-    border-radius: 8px;
+    border-radius: 4px;
     border: none;
     cursor: pointer;
     font-size: 14px;
@@ -97,7 +93,7 @@
 </div>
 
 <script>
-let focusTime = 25*60;       // segundos
+let focusTime = 25*60;
 let shortBreakTime = 5*60;
 let longBreakTime = 10*60;
 let currentTime = focusTime;
@@ -137,7 +133,6 @@ function startTimer() {
     } else {
       clearInterval(timerInterval);
       timerInterval = null;
-      // opcional: tocar som ou alert
     }
   },1000);
 }
@@ -162,7 +157,6 @@ document.getElementById('start').addEventListener('click', startTimer);
 document.getElementById('pause').addEventListener('click', pauseTimer);
 document.getElementById('reset').addEventListener('click', resetTimer);
 
-// inicial
 updateDisplay();
 </script>
 </body>
