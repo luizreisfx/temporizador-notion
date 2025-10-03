@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pomodoro Português</title>
+<title>Temporizador Português</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
 <style>
   body {
@@ -15,15 +15,16 @@
   }
 
   .timer-wrapper {
-    background: #f0f0f0;
+    background: #f0f0f0; /* fundo completo */
     border-radius: 16px;
-    padding: 20px;
-    width: 350px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    padding: 24px;
+    width: 100%;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 20px; /* mais espaço entre display e botões */
+    box-sizing: border-box;
   }
 
   .timer-header {
@@ -37,9 +38,9 @@
 
   .timer-header div {
     flex: 1;
-    padding: 8px;
+    padding: 12px 0; /* maior comprimento/altura */
     border-radius: 8px;
-    background: #f0f0f0;
+    background: #f0f0f0; /* mesma cor do fundo */
     cursor: pointer;
     transition: background 0.3s;
   }
@@ -60,12 +61,12 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    gap: 10px;
+    gap: 12px; /* mais espaço entre os botões */
   }
 
   .timer-buttons button {
     flex: 1;
-    padding: 8px 0;
+    padding: 10px 0;
     border-radius: 8px;
     border: none;
     cursor: pointer;
@@ -83,9 +84,9 @@
 <body>
 <div class="timer-wrapper">
   <div class="timer-header">
-    <div id="short-break">Pausa Curta<br>5</div>
-    <div id="focus" class="active">Foco<br>25</div>
-    <div id="long-break">Pausa Longa<br>10</div>
+    <div id="short-break">Intervalo Curto</div>
+    <div id="focus" class="active">Foco</div>
+    <div id="long-break">Intervalo Longo</div>
   </div>
   <div class="timer-display" id="time-display">25:00</div>
   <div class="timer-buttons">
@@ -114,7 +115,7 @@ function updateDisplay() {
   display.textContent = `${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
 }
 
-function switchMode(mode) {
+function switchMode(mode){
   clearInterval(timerInterval);
   currentMode = mode;
   if(mode==='focus'){ currentTime = focusTime; }
